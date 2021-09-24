@@ -2,10 +2,7 @@
  
 let clip ceiling (seq: seq<'T>) =
     seq
-    |> Seq.map (fun n ->
-        match n > ceiling with
-        | true -> ceiling
-        | false -> n)
+    |> Seq.map (fun n -> min n ceiling)
 
 let clipExample = 
     [| 1.9; 23.2; 22.; 4.; 19.; |]
